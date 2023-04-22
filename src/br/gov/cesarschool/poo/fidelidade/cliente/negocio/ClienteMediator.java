@@ -31,7 +31,7 @@ public class ClienteMediator {
         if (mensagemErro != null) {
             return new ResultadoInclusaoCliente(0, mensagemErro);
         }
-        String numeroCartao = cartaoMediator.gerarCartao(cliente);
+        long numeroCartao = cartaoMediator.gerarCartao(cliente);
         cliente.setNumeroCartao(numeroCartao);
         repositorioCliente.incluir(cliente);
         return new ResultadoInclusaoCliente(numeroCartao, null);

@@ -14,4 +14,14 @@ public class LancamentoExtratoResgate extends LancamentoExtratoDAO {
     public TipoResgate getTipoResgate() {
         return tipoResgate;
     }
+
+	public void setNumeroCartaoFidelidade(long numero) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setData(Date date) {
+		// TODO Auto-generated method stub
+		
+	}
 }

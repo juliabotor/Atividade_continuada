@@ -15,12 +15,14 @@ public class Cliente {
     private LocalDate dataNascimento;
     private double renda;
     private Endereco endereco;
+	private Date LocalDate;
+	private Date dataAtual;
 
     public Cliente(String cpf, String nomeCompleto, Sexo sexo, Date dataNascimento, double renda, Endereco endereco) {
         this.cpf = cpf;
         this.nomeCompleto = nomeCompleto;
         this.sexo = sexo;
-        this.LocalDate = dataNascimento;
+        this.setLocalDate(dataNascimento);
         this.renda = renda;
         this.endereco = endereco;
     }
@@ -37,7 +39,7 @@ public class Cliente {
         return sexo;
     }
 
-    public Date getDataNascimento() {
+    public java.time.LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
@@ -57,7 +59,7 @@ public class Cliente {
         this.sexo = sexo;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(java.time.LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -69,10 +71,27 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public int obterIdade() {
-        Date dataAtual = new Date();
-        long diferencaEmMilissegundos = dataAtual.getTime() - this.dataNascimento.getTime();
-        long diferencaEmAnos = diferencaEmMilissegundos / (24 * 60 * 60 * 1000 * 365);
-        return (int) diferencaEmAnos;
-    }
+    long diferencaEmMilissegundos = dataAtual.getTime() - this.dataNascimento.getTime();
+    long diferencaEmAnos = diferencaEmMilissegundos / (24 * 60 * 60 * 1000 * 365);
+    return (int) diferencaEmAnos;
+
+
+
+	public void setNumeroCartao(long numeroCartao) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public long getNumeroCartao() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Date getLocalDate() {
+		return LocalDate;
+	}
+
+	public void setLocalDate(Date localDate) {
+		LocalDate = localDate;
+	}
 }
